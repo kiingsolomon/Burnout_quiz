@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnout Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Burnout Checklist Quiz</h1>
+        <p>Check off any statements that resonate with your current experience.</p>
+
+        <form action="/" method="POST">
+            {% for category, items in questions.items() %}
+            <fieldset>
+                <legend>{{ category }}</legend>
+                {% for item in items %}
+                <label class="checkbox">
+                    <input type="checkbox" name="answers" value="{{ item }}"> {{ item }}
+                </label>
+                {% endfor %}
+            </fieldset>
+            {% endfor %}
+            <button type="submit">Get My Result</button>
+        </form>
+    </div>
+</body>
+</html>
