@@ -6,11 +6,69 @@
     <title>Quiz Results</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="container">
         <h1>Your Burnout Score: {{ score }}</h1>
         <p>{{ result }}</p>
         <a href="/">Take the Quiz Again</a>
+        <!-- Button to open Calendly -->
+        <div class="button-container">
+            <button onclick="openCalendly()" class="book-btn">Book an Appointment</button>
+        </div>
+<script>
+function openCalendly() {
+    window.open('https://calendly.com/gtjemide/15minute-clarity-call', '_blank');
+}
+</script>
+
+<style>
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    margin-top: 10px; /* Adds space from text above */
+}
+.book-btn {
+    background-color: #6A0DAD; /* Purple */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block; /* Ensures it doesn't stretch */
+    width: auto; /* Makes sure the button is not full width */
+    margin-top: 20px; /* Adds space from the text above */
+    margin-left: 10px; /* Adjust as needed */
+    text-align: center;
+}
+.book-btn:hover {
+    background-color: #580a90; /* Darker Purple */
+}
+</style>
     </div>
+
+
 </body>
+
 </html>
+
+<style>/* Ensure the body takes full height of the viewport */
+    body {
+        display: flex;
+        justify-content: center; /* Centers content horizontally */
+        align-items: center; /* Centers content vertically */
+        height: 100vh; /* Full height of the viewport */
+        margin: 0;
+        background-color: #f5f5f5; /* Optional: Light background color */
+    }
+    
+    /* Style the container */
+    .container {
+        text-align: center; /* Ensures text inside is centered */
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds slight shadow */
+    }
+    </style>
